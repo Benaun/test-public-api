@@ -1,2 +1,5 @@
+export * from './types'
+export { fields } from './fields'
 export * from './character.slice'
 export { default as characterReducer } from './character.slice'
+export * from './schema'

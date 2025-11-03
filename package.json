@@ -10,6 +10,7 @@
     "formate": "npx prettier --write ."
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "@reduxjs/toolkit": "^2.9.2",
     "next": "16.0.1",
     "react": "19.2.0",

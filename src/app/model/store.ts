@@ -6,7 +6,7 @@ import {
 } from 'react-redux'
 
 import { charactersApi } from '@/features/character/api'
-import { characterReducer } from '@/features/character/model/slice'
+import { characterReducer } from '@/features/character/model'
 
 export const store = configureStore({
   reducer: {

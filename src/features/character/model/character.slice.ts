@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-import { Character, CharacterState } from '../types'
+import { Character, CharacterState } from './types'
 
 const initialState: CharacterState = {
   characters: [],
@@ -19,10 +19,6 @@ const characterSlice = createSlice({
         ...character,
         inFavorite: false
       }))
-    },
-
-    getCharacterById(state, action: PayloadAction<Character>) {
-      state.currentCharacter = action.payload
     },
 
     createCharacter(state, action: PayloadAction<Character>) {
@@ -50,7 +46,6 @@ const characterSlice = createSlice({
 
 export const {
   addAllCharactersToStore,
-  getCharacterById,
   deleteCharacter,
   addToFav,
   createCharacter

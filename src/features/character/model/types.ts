@@ -8,10 +8,22 @@ export interface Character {
   name: string
   status: string
   species: string
+  type: string
   gender: string
   location: Location
   image: string
+  origin: Origin
   inFavorite: boolean
+}
+
+interface Location {
+  name: string
+  url: string
+}
+
+interface Origin {
+  name: string
+  url: string
 }
 
 export interface CharacterResponse {

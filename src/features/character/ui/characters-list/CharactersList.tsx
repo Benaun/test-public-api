@@ -4,7 +4,7 @@ import { CharacterCard } from '..'
 import { useEffect } from 'react'
 
 import { useFetchCharactersQuery } from '@/features/character/api'
-import { addAllCharactersToStore } from '@/features/character/model/slice'
+
 
 import {
   useAppDispatch,
@@ -12,6 +12,7 @@ import {
 } from '@/app/model/store'
 
 import { Heading } from '@/common/components'
+import { addAllCharactersToStore } from '../../model'
 
 export const CharactersList = () => {
   const { data, isLoading, isError } = useFetchCharactersQuery()

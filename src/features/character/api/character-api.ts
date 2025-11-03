@@ -3,7 +3,7 @@ import {
   fetchBaseQuery
 } from '@reduxjs/toolkit/query/react'
 
-import { CharacterResponse } from '../model/types'
+import { Character, CharactersResponse } from '../model/types'
 
 import { config } from '@/common/config'
 
@@ -14,11 +14,18 @@ export const charactersApi = createApi({
   }),
   tagTypes: ['Characters'],
   endpoints: build => ({
-    fetchCharacters: build.query<CharacterResponse, void>({
+    fetchCharacters: build.query<CharactersResponse, void>({
       query: () => 'character',
+      providesTags: ['Characters']
+    }),
+    fetchCharacterById: build.query<Character, string>({
+      query: id => `character/${id}`,
       providesTags: ['Characters']
     })
   })
 })
 
-export const { useFetchCharactersQuery } = charactersApi
+export const {
+  useFetchCharactersQuery,
+  useFetchCharacterByIdQuery
+} = charactersApi
