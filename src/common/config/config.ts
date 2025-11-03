@@ -1,7 +1,7 @@
 export const config = {
   title: {
     default: 'Rick & Morty',
-    template: '%s | Доска объявлений'
+    template: '%s | Rick & Morty'
   },
 
   description: 'Character of comedian serial Rick and Morty'

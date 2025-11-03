@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
 import './globals.css'
+import { Providres } from './providers'
 import { config } from '@/common/config'
 
 const poppins = Poppins({
@@ -26,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang='ru'>
       <body className={`${poppins.variable} antialiased`}>
-        <main className='container py-4'>{children}</main>
+        <Providres>
+          <main className='container py-4'>{children}</main>
+        </Providres>
       </body>
     </html>
   )
