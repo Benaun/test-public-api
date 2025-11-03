@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+React-приложение со списком карточек, на каждой из которых выводится картинка и любая информация на ваш вкус, которая пришла с эндпоинта или созданная пользователем.
 
-## Getting Started
+### 🚀 Технологии
 
-First, run the development server:
+- Next JS с TypeScript
+- RTK Query - работа с API
+- Redux Toolkit - управление локальным состоянием
+- React Hook Form + Zod - формы и валидация
+- Tailwind - стилизация
+
+### 🏃‍♂️ Быстрый старт
+
+1. Установить зависимости
+
+```bash
+npm install
+```
+
+2. Запуск в режиме разработки
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Задача 1. Вывести список продуктов
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+На странице /products
+вывести весь список продуктов
+на карточке должна быть иконка лайка. При нажатии на которую, ставится или убирается like. Иконка должна подкрашиваться, когда проставлен like.
+на карточке должна быть иконка удаления. При нажатии на которую, карточка удаляется.
+добавить фильтр для просмотра всех карточек и карточек, добавленных в избранное
+контент карточки(текст) должен быть урезан, чтобы у карточек была одинаковая высота
+при клике на любом месте карточки (кроме иконки лайка и кнопки удаления) мы должно попадать на отдельную страницу карточки.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Задача 2. Страница продукта
 
-## Learn More
+На странице /products/:id
+вывести более подробную информацию о продукте.
+сделать кнопку для перехода на основную страницу
+Задача 3. Создание продукта
+На отдельной странице /create- product реализовать создание продукта
+создать форму с полями. Поля обязательные и с минимальной валидацией.
+при отправке формы, сохранить данные в общий store.
 
-To learn more about Next.js, take a look at the following resources:
+### Бонусы
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Реализовать пагинацию списка
+- Реализовать возможность редактирования карточки продукта
+- Реализовать дополнительную фильтрацию
+- Реализовать поиск (без кнопки отправки)

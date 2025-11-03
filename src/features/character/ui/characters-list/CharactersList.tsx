@@ -1,18 +1,24 @@
 'use client'
 
 import { CharacterCard } from '..'
+import { useEffect } from 'react'
 
 import { useFetchCharactersQuery } from '@/features/character/api'
-import { useAppDispatch, useAppSelector } from '@/app/model/store'
 import { addAllCharactersToStore } from '@/features/character/model/slice'
-import { useEffect } from 'react'
+
+import {
+  useAppDispatch,
+  useAppSelector
+} from '@/app/model/store'
 
 import { Heading } from '@/common/components'
 
 export const CharactersList = () => {
   const { data, isLoading, isError } = useFetchCharactersQuery()
   const dispatch = useAppDispatch()
-  const characters = useAppSelector(state => state.characters.characters)
+  const characters = useAppSelector(
+    state => state.characters.characters
+  )
 
   useEffect(() => {
     if (!data?.results?.length) return

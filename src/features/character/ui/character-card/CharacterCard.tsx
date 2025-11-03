@@ -1,12 +1,15 @@
-"use client"
+'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
 
 import { useAppDispatch } from '@/app/model/store'
 
 import { addToFav, deleteCharacter } from '../../model/slice'
 import { Character } from '../../model/types'
+import { Button } from '@/common/components'
+
 
 export const CharacterCard = ({
     character
@@ -16,6 +19,7 @@ export const CharacterCard = ({
     const dispatch = useAppDispatch()
 
     if (!character) return null
+    const id = character.id
 
     const handleToggleFavorite = (
         event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -32,7 +36,7 @@ export const CharacterCard = ({
     }
 
     return (
-        <div className='w-[360px] h-[168px] rounded-[16px] bg-gray-400'>
+        <Link href={`/products/${id}`} className='w-[360px] h-[168px] rounded-[16px] bg-gray-400 block'>
             <div className='flex p-6 gap-5'>
                 <Image
                     src={character.image || '/Card.png'}
@@ -46,25 +50,29 @@ export const CharacterCard = ({
                         {character.name}
                     </h3>
                     <div className='flex items-center justify-between'>
-                        <button type='button' aria-label='Toggle favorite' onClick={handleToggleFavorite} className='cursor-pointer'>
+                        <Button
+                            type='button'
+                            aria-label='Toggle favorite'
+                            onClick={handleToggleFavorite}
+                        >
                             {character.inFavorite ? (
                                 <FaHeart size={30} fill={'#ee3d3d'} />
                             ) : (
                                 <FaRegHeart size={30} />
                             )}
-                        </button>
+                        </Button>
 
-                        <button
+                        <Button
                             type='button'
                             aria-label='Delete character'
-                            className='bg-red-300 p-1 rounded-lg cursor-pointer'
+                            className='bg-red-300 p-1 rounded-lg'
                             onClick={handleDeleteCharacter}
                         >
                             Удалить
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
