@@ -4,5 +4,7 @@ export const config = {
     template: '%s | Rick & Morty'
   },
 
-  description: 'Character of comedian serial Rick and Morty'
+  description: 'Character of comedian serial Rick and Morty',
+
+  BASE_URL: 'https://rickandmortyapi.com/api/'
 }

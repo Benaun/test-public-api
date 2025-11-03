@@ -1,16 +1,14 @@
-import { Character } from '@/features/character/ui'
+import { CharacterDetails } from '@/features/character/ui'
 
 export const metadata = {
-    title: 'Детали персонажа'
+  title: 'Детали персонажа'
 }
 
 export default function CharacterPage({
-    params
+  params
 }: {
-    params: { id: string }
+  params: { id: string }
 }) {
-    const { id } = params
-    return <Character id={id} />
+  const { id } = params
+  return <CharacterDetails id={id} />
 }
-
-

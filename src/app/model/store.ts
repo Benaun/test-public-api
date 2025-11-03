@@ -5,10 +5,16 @@ import {
   useSelector
 } from 'react-redux'
 
+import { charactersApi } from '@/features/character/api'
 import { characterReducer } from '@/features/character/model/slice'
 
 export const store = configureStore({
-  reducer: { characters: characterReducer }
+  reducer: {
+    characters: characterReducer,
+    [charactersApi.reducerPath]: charactersApi.reducer
+  },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware().concat(charactersApi.middleware)
 })
 
 export type RootState = ReturnType<typeof store.getState>
