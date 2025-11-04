@@ -1,6 +1,6 @@
 import { Character } from '../../model/types'
 
-import { Button, Field } from '@/common/components'
+import { Button, TextField } from '@/common/components'
 
 interface CharacterInfoProps {
   item: Character
@@ -20,15 +20,15 @@ export const CharacterInfo = ({
         Карточка персонажа
       </h2>
       <div className='flex flex-wrap gap-4 mb-10'>
-        <Field label='Имя' value={item.name} />
-        <Field label='Вид' value={item.species || '—'} />
-        <Field label='Тип' value={item.type || '—'} />
-        <Field label='Пол' value={item.gender || '—'} />
-        <Field
+        <TextField label='Имя' value={item.name} />
+        <TextField label='Вид' value={item.species || '—'} />
+        <TextField label='Тип' value={item.type || '—'} />
+        <TextField label='Пол' value={item.gender || '—'} />
+        <TextField
           label='Происхождение'
           value={item.origin?.name || '—'}
         />
-        <Field
+        <TextField
           label='Локация'
           value={item.location?.name || '—'}
         />

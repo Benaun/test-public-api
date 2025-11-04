@@ -3,7 +3,7 @@ interface DetailFieldProps {
   value: string
 }
 
-export const Field = ({ label, value }: DetailFieldProps) => {
+export const TextField = ({ label, value }: DetailFieldProps) => {
   return (
     <div className='space-y-1 w-full sm:w-[calc(50%-0.5rem)]'>
       <p className='text-xl uppercase tracking-wide text-gray-500'>
