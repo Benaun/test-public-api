@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "test-public-api",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "formate": "npx prettier --write ."
+    "formate": "npx prettier --write .",
+    "export": "next build && next export",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -29,6 +32,7 @@
     "clsx": "^2.1.1",
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "typescript": "^5"

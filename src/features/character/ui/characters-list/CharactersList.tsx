@@ -1,5 +1,6 @@
 'use client'
 
+import { CharacterCard } from '..'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
@@ -18,7 +19,6 @@ import {
   Heading,
   SearchInput
 } from '@/common/components'
-import { CharacterCard } from '..'
 
 export const CharactersList = () => {
   const { data, isLoading, isError } = useFetchCharactersQuery()

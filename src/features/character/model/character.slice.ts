@@ -3,8 +3,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { Character, CharacterState } from './types'
 
 const initialState: CharacterState = {
-  characters: [],
-  currentCharacter: null
+  characters: []
 }
 
 const characterSlice = createSlice({

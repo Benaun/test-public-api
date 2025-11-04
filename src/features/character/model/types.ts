@@ -1,6 +1,5 @@
 export interface CharacterState {
   characters: Character[]
-  currentCharacter: Character | null
 }
 
 export interface Character {

@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 
-import { useAppDispatch } from '@/app/model/store'
+import { useAppDispatch, useAppSelector } from '@/app/model/store'
 
 import {
   Character,
@@ -27,6 +27,11 @@ export const AddCharacterForm = () => {
     mode: 'onChange',
     resolver: zodResolver(characterSchema)
   })
+
+  const characters = useAppSelector(
+    state => state.characters.characters
+  )
+
   const dispatch = useAppDispatch()
   const router = useRouter()
 
@@ -47,6 +52,7 @@ export const AddCharacterForm = () => {
     dispatch(createCharacter(newCharacter))
     reset()
     router.push('/products')
+
   }
 
   const handleCancelEditing = () => {
