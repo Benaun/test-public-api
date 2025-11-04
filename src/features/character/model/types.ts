@@ -16,14 +16,12 @@ export interface Character {
   inFavorite: boolean
 }
 
-interface Location {
+type Location = {
   name: string
-  url: string
 }
 
 interface Origin {
   name: string
-  url: string
 }
 
 export interface CharacterResponse {

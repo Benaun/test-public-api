@@ -21,14 +21,8 @@ export const characterSchema = z.object({
     .string()
     .min(2, 'Должно быть минимум 2 символа')
     .max(10, 'Не более 10 символов'),
-  origin: z
-    .string()
-    .min(2, 'Должно быть минимум 2 символа')
-    .max(10, 'Не более 10 символов'),
-  location: z
-    .string()
-    .min(2, 'Должно быть минимум 2 символа')
-    .max(10, 'Не более 10 символов')
+  origin: z.string().min(2, 'Должно быть минимум 2 символа'),
+  location: z.string().min(2, 'Должно быть минимум 2 символа')
 })
 
 export type characterFormData = z.infer<typeof characterSchema>

@@ -25,10 +25,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='ru' className='h-dvh overflow-y-hidden'>
-      <body
-        className={`${poppins.variable} antialiased h-dvh overflow-y-hidden`}
-      >
+    <html lang='ru'>
+      <body className={`${poppins.variable} antialiased h-dvh`}>
         <Providres>
           <div className='container w-full flex flex-col gap-5 mx-auto'>
             <header className='py-5 flex w-full gap-4 justify-center'>

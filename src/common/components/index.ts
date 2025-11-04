@@ -1,4 +1,5 @@
 export { Heading } from './heading/Heading'
 export { Button } from './button/Button'
-export { Field } from './field/field'
+export { Field } from './field/Field'
 export { InputField } from './input/InputField'
+export { SearchInput } from './search/SearchInput'

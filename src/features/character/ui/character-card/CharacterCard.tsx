@@ -6,10 +6,10 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa'
 
 import { useAppDispatch } from '@/app/model/store'
 
+import { addToFav, deleteCharacter } from '../../model'
 import { Character } from '../../model/types'
 
 import { Button } from '@/common/components'
-import { addToFav, deleteCharacter } from '../../model'
 
 export const CharacterCard = ({
   character

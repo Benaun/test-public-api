@@ -22,7 +22,7 @@ const characterSlice = createSlice({
     },
 
     createCharacter(state, action: PayloadAction<Character>) {
-      state.characters.push(action.payload)
+      state.characters.unshift(action.payload)
     },
 
     deleteCharacter(

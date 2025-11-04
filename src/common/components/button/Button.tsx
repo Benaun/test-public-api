@@ -3,16 +3,19 @@ import type React from 'react'
 interface IProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode
-  classname?: string
+  className?: string
 }
 
 export const Button = ({
   children,
-  classname,
+  className,
   ...props
 }: IProps) => {
   return (
-    <button className={`cursor-pointer ${classname}`} {...props}>
+    <button
+      className={`cursor-pointer ${className ?? ''}`}
+      {...props}
+    >
       {children}
     </button>
   )

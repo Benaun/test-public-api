@@ -38,6 +38,8 @@ export const CharacterEditingForm = ({
     defaultValues: initialValues
   })
 
+  const onSubmit = () => {}
+
   return (
     <section className='w-[760px] mx-auto rounded-2xl shadow-sm ring-1 ring-black/5 p-6'>
       <h2
@@ -46,7 +48,7 @@ export const CharacterEditingForm = ({
       >
         Форма редактирования
       </h2>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         {fields.map(field => (
           <InputField
             key={field.id}
