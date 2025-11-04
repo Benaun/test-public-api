@@ -1,5 +1,7 @@
+import { AddCharacterForm } from '@/features/character/ui'
+
 const CreateProduct = () => {
-  return <h1>create</h1>
+  return <AddCharacterForm />
 }
 
 export default CreateProduct
